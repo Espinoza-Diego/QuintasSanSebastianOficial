@@ -1,0 +1,1104 @@
+/* ==========================================
+   QUINTAS DE SAN SEBASTIÁN
+   Diseño adaptable, moderno y accesible
+========================================== */
+
+:root {
+    --verde: #173F32;
+    --verde-2: #28634C;
+    --verde-claro: #EAF1EB;
+    --dorado: #C49A50;
+    --crema: #F8F5ED;
+    --naranja: #E8590C;
+    --fondo: #F7F8F4;
+    --blanco: #FFFFFF;
+    --texto: #26352D;
+    --suave: #68766E;
+    --linea: #D8E1DA;
+
+    --radio: 16px;
+    --sombra: 0 8px 28px rgba(27, 67, 50, .08);
+    --sombra-hover: 0 14px 35px rgba(27, 67, 50, .14);
+
+    --fuente: "Nunito Sans", "Segoe UI", Arial, sans-serif;
+    --titulo: "Young Serif", Georgia, serif;
+}
+
+/* ==========================================
+   REINICIO Y CONFIGURACIÓN GENERAL
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: var(--fuente);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--verde-2);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+p {
+    overflow-wrap: break-word;
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    z-index: 2000;
+    background: var(--verde);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* ==========================================
+   ENCABEZADO Y NAVEGACIÓN
+========================================== */
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+    min-height: 82px;
+    background: var(--verde);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 7%;
+    gap: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, .12);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: white;
+    font-family: var(--titulo);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 28px;
+    color: var(--dorado);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    display: inline-block;
+    color: white;
+    font-weight: 800;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: background .2s ease;
+}
+
+.nav-list a:hover,
+.nav-list a[aria-current="page"] {
+    background: rgba(255, 255, 255, .14);
+    text-decoration: none;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/* ==========================================
+   AVISO INFORMATIVO
+========================================== */
+
+.aviso {
+    background: #FFF3D6;
+    color: #76520B;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+}
+
+/* ==========================================
+   CONTENIDO GENERAL
+========================================== */
+
+main {
+    width: 100%;
+    min-height: 65vh;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: #F2E9D7;
+    color: #765523;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.meta {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--verde-2);
+}
+
+/* ==========================================
+   PORTADA PRINCIPAL
+========================================== */
+
+.hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(16, 48, 36, .96),
+            rgba(16, 48, 36, .76)
+        ),
+        var(--verde);
+    color: white;
+    padding: 85px 7%;
+}
+
+.hero-inner {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.hero .meta {
+    color: #D8E8DC;
+}
+
+.hero h1 {
+    max-width: 750px;
+    margin: 14px 0;
+    font-family: var(--titulo);
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.2;
+}
+
+.hero-description {
+    max-width: 650px;
+    color: #E5EFE8;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   BUSCADOR Y FORMULARIOS
+========================================== */
+
+.barra {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.barra .campo {
+    flex: 1;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--linea);
+    border-radius: 10px;
+    background: white;
+    color: var(--texto);
+    outline-offset: 2px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--dorado);
+    box-shadow: 0 0 0 3px rgba(196, 154, 80, .15);
+}
+
+label {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.btn,
+.btn-chico,
+.btn-borde,
+.btn-reservar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--verde);
+    color: white;
+    padding: 12px 19px;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.btn:hover,
+.btn-chico:hover,
+.btn-reservar:hover {
+    background: var(--dorado);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .12);
+}
+
+.btn-borde {
+    background: white;
+    color: var(--verde);
+    border: 1px solid var(--verde);
+}
+
+.btn-borde:hover {
+    background: var(--verde-claro);
+    color: var(--verde);
+}
+
+.btn-chico {
+    padding: 8px 13px;
+    font-size: 13px;
+}
+
+/* ==========================================
+   LISTADO DE QUINTAS
+========================================== */
+
+.listado {
+    max-width: 1150px;
+    margin: 40px auto;
+    padding: 0 22px;
+}
+
+.cab-res {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.cab-res h2,
+.seccion-detalle h2 {
+    font-family: var(--titulo);
+    color: var(--verde);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.cards.dos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--linea);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-hover);
+}
+
+.foto {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.foto-card {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.card:hover .foto-card {
+    transform: scale(1.04);
+}
+
+.cuerpo {
+    padding: 23px;
+}
+
+.cuerpo h2,
+.cuerpo h3 {
+    margin-top: 0;
+    color: var(--verde);
+    font-size: 21px;
+}
+
+.descripcion-card {
+    color: var(--suave);
+}
+
+.servicios-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--verde-claro);
+    color: var(--verde);
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.linea-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.precio {
+    font-weight: 800;
+    color: var(--verde);
+    font-size: 18px;
+}
+
+.nota {
+    color: var(--suave);
+    font-size: 14px;
+}
+
+.vacio {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+}
+
+/* ==========================================
+   DETALLE DE LA QUINTA
+========================================== */
+
+.migas {
+    max-width: 1150px;
+    margin: 22px auto;
+    padding: 0 22px;
+    font-size: 14px;
+    color: var(--suave);
+}
+
+.cab-detalle {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cab-detalle > div {
+    min-width: 0;
+}
+
+.t1 {
+    font-family: var(--titulo);
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.2;
+    color: var(--verde);
+    margin: 12px 0;
+}
+
+/* IMPORTANTE:
+   El contenedor .detalle organiza el contenido
+   y el panel lateral en dos columnas. */
+
+.detalle {
+    max-width: 1150px;
+    margin: 20px auto 50px;
+    padding: 0 22px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, .8fr);
+    align-items: start;
+    gap: 25px;
+}
+
+.contenido-detalle {
+    min-width: 0;
+}
+
+.seccion-detalle,
+.panel {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid var(--linea);
+    box-shadow: var(--sombra);
+    margin-bottom: 22px;
+}
+
+.seccion-detalle h2,
+.panel h2 {
+    font-size: 23px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   GALERÍA DE FOTOGRAFÍAS
+========================================== */
+
+.galeria {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: repeat(2, 145px);
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.galeria .foto {
+    height: 100%;
+    min-height: 120px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    background:
+        linear-gradient(rgba(23, 63, 50, .45), rgba(23, 63, 50, .65)),
+        linear-gradient(135deg, #78917C, #304F3D);
+}
+
+.galeria .foto-principal {
+    grid-row: 1 / 3;
+    min-height: 302px;
+    background:
+        linear-gradient(rgba(23, 63, 50, .25), rgba(23, 63, 50, .55)),
+        linear-gradient(135deg, #A8B69B, #496B51);
+}
+
+.galeria .foto span {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, .25);
+}
+
+/* ==========================================
+   INFORMACIÓN Y SERVICIOS
+========================================== */
+
+.datos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.datos > div {
+    background: var(--crema);
+    border: 1px solid #EAE2D3;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.datos span,
+.datos b {
+    display: block;
+}
+
+.datos span {
+    color: var(--suave);
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.datos b {
+    color: var(--verde);
+    font-size: 15px;
+}
+
+.lista-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* ==========================================
+   PLATOS Y GASTRONOMÍA
+========================================== */
+
+.plato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--linea);
+}
+
+.plato:last-of-type {
+    border-bottom: 0;
+}
+
+.plato b {
+    color: var(--verde);
+}
+
+.plato span {
+    font-weight: 800;
+    color: var(--verde-2);
+    white-space: nowrap;
+}
+
+/* ==========================================
+   MAPA
+========================================== */
+
+.mapa-q {
+    width: 100%;
+    min-height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.leaflet-container {
+    font-family: var(--fuente);
+}
+
+/* ==========================================
+   PANEL DE RESERVA
+========================================== */
+
+.panel {
+    min-width: 0;
+}
+
+.fijo {
+    align-self: start;
+    position: sticky;
+    top: 20px;
+}
+
+.precio-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--suave);
+    font-size: 14px;
+    margin: 18px 0;
+}
+
+.precio-panel strong {
+    font-size: 29px;
+    color: var(--verde);
+}
+
+.btn-reservar {
+    width: 100%;
+    padding: 14px 18px;
+    margin: 8px 0;
+}
+
+/* ==========================================
+   FORMULARIO DE RESERVA
+========================================== */
+
+.res {
+    max-width: 850px;
+    margin: 35px auto;
+    padding: 30px;
+    background: white;
+    border: 1px solid var(--linea);
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+.res .fila {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.chk {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.chk input {
+    width: auto;
+}
+
+/* ==========================================
+   MENSAJES Y VALIDACIONES
+========================================== */
+
+.error {
+    background: #FDECEC;
+    color: #9D2222;
+    padding: 14px 18px;
+    border: 1px solid #F3CACA;
+    border-radius: 10px;
+    margin: 18px auto;
+    max-width: 1100px;
+}
+
+.error ul {
+    margin-bottom: 0;
+}
+
+.ok {
+    background: #E4F4E8;
+    color: #205D34;
+    border: 1px solid #C4E4CD;
+    padding: 13px 18px;
+    border-radius: 10px;
+    margin: 18px auto;
+    max-width: 1100px;
+}
+
+/* ==========================================
+   PAGINACIÓN LARAVEL
+========================================== */
+
+.pag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.pag nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.pag a,
+.pag span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    width: auto;
+    height: 36px;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 8px;
+}
+
+.pag svg,
+nav[role="navigation"] svg {
+    width: 14px !important;
+    height: 14px !important;
+    max-width: 14px !important;
+    max-height: 14px !important;
+}
+
+/* ==========================================
+   CONFIRMACIÓN DE RESERVA
+========================================== */
+
+.confirmacion {
+    max-width: 750px;
+    margin: 45px auto;
+    padding: 30px;
+    background: white;
+    border: 1px solid var(--linea);
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+/* ==========================================
+   PIE DE PÁGINA
+========================================== */
+
+.site-footer {
+    margin-top: 55px;
+    background: #123328;
+    color: white;
+    text-align: center;
+    padding: 38px 20px;
+    font-size: 14px;
+}
+
+.footer-contenido {
+    max-width: 900px;
+    margin: auto;
+}
+
+.footer-logo {
+    font-family: var(--titulo);
+    font-size: 21px;
+    color: white;
+    margin: 0 0 8px;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, .15);
+    color: #D4E2D9;
+    font-size: 12px;
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .detalle {
+        grid-template-columns: 1fr;
+    }
+
+    .fijo {
+        position: static;
+    }
+
+    .datos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 640px) {
+
+    .site-header {
+        position: relative;
+        flex-wrap: wrap;
+        padding: 14px 18px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        font-size: 23px;
+    }
+
+    .nav-toggle {
+        display: block;
+        width: 42px;
+        height: 42px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, .6);
+        border-radius: 9px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .barras,
+    .barras::before,
+    .barras::after {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: white;
+        position: absolute;
+        left: 10px;
+        transition: transform .2s ease;
+    }
+
+    .barras {
+        top: 19px;
+    }
+
+    .barras::before,
+    .barras::after {
+        content: "";
+        left: 0;
+    }
+
+    .barras::before {
+        top: -6px;
+    }
+
+    .barras::after {
+        top: 6px;
+    }
+
+    .site-header.nav-open .barras {
+        background: transparent;
+    }
+
+    .site-header.nav-open .barras::before {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .site-header.nav-open .barras::after {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .site-header nav {
+        display: none;
+        width: 100%;
+    }
+
+    .site-header.nav-open nav {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 14px 0 5px;
+    }
+
+    .nav-list a {
+        display: block;
+        padding: 12px;
+    }
+
+    .aviso {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 55px 22px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .barra {
+        flex-direction: column;
+    }
+
+    .listado {
+        padding: 0 15px;
+        margin: 28px auto;
+    }
+
+    .cards,
+    .cards.dos {
+        grid-template-columns: 1fr;
+    }
+
+    .foto,
+    .foto-card {
+        height: 220px;
+    }
+
+    .cab-detalle {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .detalle {
+        padding: 0 15px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 210px 120px;
+        gap: 8px;
+    }
+
+    .galeria .foto-principal {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        min-height: 0;
+    }
+
+    .galeria .foto {
+        min-height: 0;
+    }
+
+    .seccion-detalle,
+    .panel {
+        padding: 19px;
+    }
+
+    .datos {
+        grid-template-columns: 1fr;
+    }
+
+    .res {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+
+    .res .fila {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .confirmacion {
+        margin: 25px 12px;
+        padding: 22px;
+    }
+
+    .mapa-q {
+        min-height: 240px;
+    }
+
+    .cab-res {
+        align-items: flex-start;
+    }
+
+    .pag a,
+    .pag span {
+        min-width: 30px;
+        height: 30px;
+        padding: 4px 7px;
+        font-size: 12px;
+    }
+
+    .pag svg,
+    nav[role="navigation"] svg {
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    .site-footer {
+        padding: 30px 18px;
+    }
+}
+
+/* ==========================================
+   PREFERENCIA DE MOVIMIENTO REDUCIDO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
